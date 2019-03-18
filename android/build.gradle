@@ -12,19 +12,19 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.3.1'
+    classpath 'com.android.tools.build:gradle:3.0.1'
   }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-  compileSdkVersion safeExtGet('compileSdkVersion', 28)
-  buildToolsVersion safeExtGet('buildToolsVersion', '28.0.3')
+  compileSdkVersion safeExtGet('compileSdkVersion', 26)
+  buildToolsVersion safeExtGet('buildToolsVersion', '26.0.2')
 
   defaultConfig {
-    minSdkVersion safeExtGet('minSdkVersion', 19)
-    targetSdkVersion safeExtGet('targetSdkVersion', 28)
+    minSdkVersion safeExtGet('minSdkVersion', 16)
+    targetSdkVersion safeExtGet('targetSdkVersion', 26)
   }
 
   flavorDimensions "react-native-camera"
@@ -77,9 +77,9 @@ dependencies {
   implementation "com.google.zxing:core:3.3.0"
   implementation "com.drewnoakes:metadata-extractor:2.9.1"
   generalImplementation "com.google.android.gms:play-services-vision:$googlePlayServicesVisionVersion"
-  implementation "androidx.exifinterface:exifinterface:1.0.0"
-  implementation "androidx.annotation:annotation:1.0.0"
-  implementation "androidx.legacy:legacy-support-v4:1.0.0"
+  implementation "com.android.support:exifinterface:${safeExtGet('supportLibVersion', '27.1.0')}"
+  implementation "com.android.support:support-annotations:${safeExtGet('supportLibVersion', '27.1.0')}"
+  implementation "com.android.support:support-v4:${safeExtGet('supportLibVersion', '27.1.0')}"
   mlkitImplementation "com.google.firebase:firebase-ml-vision:${safeExtGet('firebase-ml-vision', '18.0.2')}"
   mlkitImplementation "com.google.firebase:firebase-ml-vision-face-model:${safeExtGet('firebase-ml-vision-face-model', '17.0.2')}"
 }
